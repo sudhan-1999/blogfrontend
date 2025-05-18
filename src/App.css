@@ -1,0 +1,15 @@
+.signup,.login{
+    color:red
+}
+
+#blogcard{display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#blogscard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
