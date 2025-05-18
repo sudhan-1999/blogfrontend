@@ -118,7 +118,6 @@ function Myblogs() {
 
   return (
     <>
-    //EDIT MODAL
 <Dialog open={editDialogOpen} onClose={handleDialogClose} fullWidth maxWidth="sm">
   <DialogTitle>Edit Blog</DialogTitle>
   <DialogContent dividers>
