@@ -25,7 +25,7 @@ export default function Login() {
     }
 
     axios
-      .post("http://localhost:5000/api/auth/login", {
+      .post("https://blogbackend-pxag.onrender.com/api/auth/login", {
         email: email,
         password: password,
       })

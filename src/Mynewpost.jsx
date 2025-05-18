@@ -38,7 +38,7 @@ function Mynewpost() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/postblog", 
+        "https://blogbackend-pxag.onrender.com/api/postblog", 
         { title, category, author, content, id: userId },
         {
           headers: { Authorization: `Bearer ${token}` },

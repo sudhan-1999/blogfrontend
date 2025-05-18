@@ -35,7 +35,7 @@ function Blogs() {
     setLoading(true);
     setError("");
     axios
-      .get("http://localhost:5000/api/blogs", {
+      .get("https://blogbackend-pxag.onrender.com/api/blogs", {
         headers: { authorization: token },
       })
       .then((res) => {
@@ -81,7 +81,7 @@ function Blogs() {
     params.append("userid", userid);
 
     axios
-      .get(`http://localhost:5000/api/blogs?${params.toString()}`, {
+      .get(`https://blogbackend-pxag.onrender.com/api/blogs?${params.toString()}`, {
         headers: { authorization: token },
       })
       .then((res) => {

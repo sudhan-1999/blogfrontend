@@ -39,18 +39,18 @@ function Myblogs() {
   const userid = localStorage.getItem("userid");
   const authHeader = token ? `Bearer ${token}` : "";
 
-  /* ---------- OPEN MODAL ---------- */
+  // OPEN MODAL 
   const handleEditClick = (blog) => {
-    setEditData(blog); // pre‑fill fields
+    setEditData(blog); 
     setEditDialogOpen(true);
   };
 
-  /* ---------- CLOSE MODAL ---------- */
+  //CLOSE MODAL 
   const handleDialogClose = () => {
     setEditDialogOpen(false);
   };
 
-  /* ---------- SAVE EDIT ---------- */
+  //SAVE EDIT 
   const handleSaveEdit = async () => {
     const { _id, title, category, author, content } = editData;
     if (!title || !category || !author || !content) {
@@ -59,7 +59,7 @@ function Myblogs() {
     }
     try {
       await axios.put(
-        `http://localhost:5000/api/updateblog/${_id}`,
+        `https://blogbackend-pxag.onrender.com/api/updateblog/${_id}`,
         { title, category, author, content, userId: userid },
         { headers: { Authorization: authHeader } }
       );
@@ -73,9 +73,9 @@ function Myblogs() {
   // Delete blog function
   const deleteBlog = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/deleteblog/${id}`, {
+      await axios.delete(`https://blogbackend-pxag.onrender.com/api/deleteblog/${id}`, {
         headers: { Authorization: authHeader },
-        params: { userid }, // send userid as query param here
+        params: { userid }, 
       });
       toast.success("Blog deleted successfully!");
       setRefresh((prev) => !prev);
@@ -104,7 +104,7 @@ function Myblogs() {
 
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/myblogs", {
+      .get("https://blogbackend-pxag.onrender.com/api/myblogs", {
         headers: { Authorization: authHeader },
         params: { userid },
       })
@@ -118,7 +118,7 @@ function Myblogs() {
 
   return (
     <>
-    {/* ---------- EDIT MODAL ---------- */}
+    //EDIT MODAL
 <Dialog open={editDialogOpen} onClose={handleDialogClose} fullWidth maxWidth="sm">
   <DialogTitle>Edit Blog</DialogTitle>
   <DialogContent dividers>
